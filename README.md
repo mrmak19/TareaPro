@@ -65,7 +65,7 @@ TareaPro/
 ```
 
 ## 👨‍💻 Autor(es)
-El proyecto ha sido desarrollado en contunto por **Yanjun Chen**, **Hengyi Du** y ****
+El proyecto ha sido desarrollado en contunto por **Yanjun Chen**, **Hengyi Du** y **Xiuhuang Zhan Zhang**.
 Desarrollado como proyecto educativo para un trabajo de la universidad y para demostrar habilidades en:
 
 - Manejo de SQL
