@@ -69,7 +69,7 @@ print("Actualización completa")
 
 # Consultas
 
-# Clientes con pedidos cancelados.
+# 1 Clientes con pedidos cancelados.
 query1 = """
 SELECT p.id_pedido, c.nombre, c.apellido, p.fecha, p.estado
 FROM pedidos p
@@ -79,7 +79,7 @@ WHERE p.estado = 'cancelado';
 df1 = pd.read_sql(query1, conn)
 print(df1, "\n")
 
-# el promedio de ingresos
+# 2 el promedio de ingresos
 query2 = "SELECT AVG(precio_unitario) AS precio_promedio FROM detalles_pedido;"
 df2 = pd.read_sql(query2, conn)
 print(df2, "\n")
@@ -95,7 +95,7 @@ ORDER BY total_pedidos DESC;
 df3 = pd.read_sql(query3, conn)
 print(df3, "\n")
 
-# 5 Producto mas vendido
+# 4 Producto mas vendido
 query4 = """
 SELECT Top 5 pr.id_producto, pr.nombre, SUM(dp.cantidad) AS total_vendido
 FROM productos pr
@@ -106,15 +106,26 @@ ORDER BY total_vendido DESC;
 df4 = pd.read_sql(query4, conn)
 print(df4, "\n")
 
-# Total vendido por producto
+# 5 Total vendido por producto y cantidad de pedidos realizados por cliente
 query5 = """
-SELECT p.id_pedido, c.nombre, c.apellido,
-       SUM(dp.cantidad * dp.precio_unitario) AS total_pedido
+SELECT 
+    p.id_pedido,
+    c.nombre,
+    c.apellido,
+    SUM(dp.cantidad * dp.precio_unitario) AS total_pedido,
+    pedidos_cliente.numero_pedidos
 FROM pedidos p
 JOIN clientes c ON p.id_cliente = c.id_cliente
 JOIN detalles_pedido dp ON p.id_pedido = dp.id_pedido
-GROUP BY p.id_pedido, c.nombre, c.apellido
+JOIN (
+    SELECT id_cliente, COUNT(*) AS numero_pedidos
+    FROM pedidos
+    GROUP BY id_cliente
+) AS pedidos_cliente
+ON c.id_cliente = pedidos_cliente.id_cliente
+GROUP BY p.id_pedido, c.id_cliente, c.nombre, c.apellido, pedidos_cliente.numero_pedidos
 ORDER BY total_pedido DESC;
+
 """
 df5 = pd.read_sql(query5, conn)
 print(df5, "\n")
