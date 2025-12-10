@@ -57,11 +57,20 @@ La base de datos del supermercado se organiza en cuatro tablas principales: Clie
 ## 📁 Estructura del Proyecto
 ```bash
 TareaPro/
-├── Tarea2.py                   # Ejecutable y punto de partida
-├── moduloSQL.py                # Módulo propio con conexión a la BD
-├── scripts_SQL/                # Carpeta con las gestiones de la BD
-│   └── tabla.sql               # Script SQL para crear las tablas
-└── README.md                   # Este archivo
+├── Tarea2.py                       # Ejecutable y punto de partida
+├── RellenarDatos.py                # Script que se encarga de poblar la base de datos
+├── moduloSQL.py                    # Módulo propio con conexión a la base de datos
+├── Modificaciones.py               # Script donde se albergan las querys solicitadas
+├── Datos.py                        # Módulo propio donde albergan funciones para poblar con datos
+├── DataExport.py                   # Script donde se exporta a CSV el resultado de una query
+├── Analisis.ipynb                  # Notebook donde alberga el análisis de los resultados de la query
+├── data/                            # Carpeta con los CSVs
+│   └── clientes.csv                # CSV donde alberga los datos de los clientes
+│   └── detalles_pedido.csv         # CSV donde alberga los detalles de cada pedido
+│   └── pedidos.csv                 # CSV donde alberga los pedidos
+│   └── productos.csv               # CSV donde alberga los datos de los productos
+│   └── total_vendido.csv           # CSV resultante de la exportación de datos de la query
+└── README.md                       # Este presente archivo
 ```
 
 ## 👨‍💻 Autor(es)

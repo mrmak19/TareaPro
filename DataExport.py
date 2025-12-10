@@ -43,7 +43,7 @@ rows = cursor.fetchall()
 df = pd.DataFrame.from_records(rows, columns=columns)
 
 # Guardar CSV
-df.to_csv("total_vendido.csv", index=False)
+df.to_csv("data/total_vendido.csv", index=False)
 # Cerramos conexión
 conn_tarea.commit()
 conn_tarea.close()

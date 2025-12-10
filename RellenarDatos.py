@@ -6,10 +6,10 @@ DB_NAME = "TareaPro"
 usr="sa"
 passwd="asdf1234"
 
-url_cliente = "clientes.csv"
-url_productos = "productos.csv"
-url_pedidos = "pedidos.csv"
-url_detalles = "detalles_pedido.csv"
+url_cliente = "data/clientes.csv"
+url_productos = "data/productos.csv"
+url_pedidos = "data/pedidos.csv"
+url_detalles = "data/detalles_pedido.csv"
 
 conn = sql.connexionSQL(host=host,db=DB_NAME,usr=usr,passwd=passwd)
 
