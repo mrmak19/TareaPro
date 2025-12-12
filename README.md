@@ -12,7 +12,7 @@ pip install pyodbc
 ```
 
 ## Base de Datos
-La base de datos del supermercado se organiza en cuatro tablas principales: Clientes, Productos, Pedidos y Detalles de Pedido. A continuación se detalla cada tabla y sus campos:
+Se ha optado por una base de datos de un supermercado que registra a los clientes y pedidos. Luego se organiza en cuatro tablas principales: Clientes, Productos, Pedidos y Detalles de Pedido. A continuación se detalla cada tabla y sus campos:
 
 ### Tabla Clientes
 
@@ -72,9 +72,12 @@ TareaPro/
 │   └── total_vendido.csv           # CSV resultante de la exportación de datos de la query
 └── README.md                       # Este presente archivo
 ```
+## Análisis de datos
+El análisis de los datos se ha realizado en el notebook, las explicaciones y gráficas se encuentran dentro del fichero. El análisis se ha realizado con la consulta de "total vendido por cliente". A partir de ella, se realiza los distintos análisis y se intenta llegar a una propuesta para mejorar la situación。 
+
 
 ## 👨‍💻 Autor(es)
-El proyecto ha sido desarrollado en contunto por **Yanjun Chen**, **Hengyi Du** y **Xiuhuang Zhan Zhang**.
+El proyecto ha sido desarrollado en conjunto por **Yanjun Chen**, **Hengyi Du** y **Xiuhuang Zhan Zhang**.
 Desarrollado como proyecto educativo para un trabajo de la universidad y para demostrar habilidades en:
 
 - Manejo de SQL
